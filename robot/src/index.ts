@@ -33,6 +33,6 @@ getQiitaPostsFrom(moment().subtract(1, 'days'))
   .pipe(
     tap(x => console.log(x)),
     toArray(),
-    flatMap(arr => fs.outputJSON(path.join(__dirname, `../${moment().format('YYYY-MM-DD')}.json`), arr))
+    flatMap(arr => fs.outputJSON(path.join(__dirname, `../data/${moment().format('YYYY-MM-DD')}.json`), arr))
   )
   .subscribe(v => { }, err => console.log(err), () => console.log('Completed'))
