@@ -4,7 +4,7 @@ import * as moment from 'moment'
 
 
 export const getQiitaPostsFrom = (timestamp: moment.Moment) =>
-  getQiitaPosts({ query: 'updated:>' + timestamp.format('YYYY-MM-DD') })
+  getQiitaPosts({ query: 'updated:>=' + timestamp.format('YYYY-MM-DD') })
     .pipe(
       tap(v => console.log(v)),
       toArray()
